@@ -1,0 +1,99 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "My Hub🥰❤️🤑", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+function   AbilityEvent()
+
+         while   _G.AbilityEvent  ==  true do
+
+         local args = {
+
+    [1] = 4
+
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote Events"):WaitForChild("AbilityEvent"):FireServer(unpack(args))
+
+wait(0.0001)
+
+end
+
+end
+
+         
+
+-- Main
+
+local ScriptTab= Window:MakeTab({
+
+	Name = "Main",	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+local Section = ScriptTab:AddSection({
+
+	Name = "Spy"
+
+})
+
+ScriptTab:AddButton({
+
+	Name = "Spy",
+
+	Callback = function()
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
+
+  	end    
+
+})
+
+ScriptTab:AddToggle({
+
+	Name = "AutoTap",
+
+	Default = false,
+
+	Callback = function(Value)
+
+	      _G.AbilityEvent = Value
+
+	      AbilityEvent()
+
+	end    
+
+})
+
+-- Ez
+
+local EaTab = Window:MakeTab({
+
+	Name = "Keyboard",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+
+local Section = EaTab:AddSection({
+
+	Name = "Main"
+
+})
+
+EaTab:AddButton({
+
+	Name = "Keyboard",
+
+	Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+
+  	end    
+
+})
+
+OrionLib:Init()
